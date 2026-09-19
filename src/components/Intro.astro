@@ -1,0 +1,9 @@
+---
+import { languageFromPath, translator } from '../i18n/utils';
+const lang = languageFromPath(Astro.url.pathname);
+const t = translator(lang);
+---<section id="inner-world" class="intro section wrap" aria-labelledby="intro-title">
+  <p class="eyebrow">{t("01 / THE INNER WORLD")}</p>
+  <div><h2 id="intro-title" class="editorial-heading">{t("You can feel it all.")}<br /><em>{t("And still choose your way.")}</em></h2>
+  <div class="intro-columns"><p>{t("Anger, grief, fear. Many of us never learned how to stay with these feelings. We push them away, or they take the lead. Sometimes we lose touch with what we feel at all — even when we're surrounded by people.")}</p><p>{t("Our work begins with getting to know that inner world. Building the awareness and language to understand it. Finding a steadier relationship with yourself, so that emotion can inform your choices without making them for you.")}</p></div></div>
+</section>

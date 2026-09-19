@@ -1,0 +1,12 @@
+---
+import { languageFromPath, translator } from '../i18n/utils';
+const lang = languageFromPath(Astro.url.pathname);
+const t = translator(lang);
+import Button from './Button.astro';
+const dimensions = ['Self-Perception', 'Self-Understanding', 'Self-Acceptance', 'Self-Reflection', 'Self-Responsibility', 'Self-Awareness', 'Self-Trust', 'Self-Efficacy', 'Self-Love'];
+---
+<section id="new-me" class="offering section wrap" aria-labelledby="new-me-title">
+  <div class="offer-heading"><p class="eyebrow">{t("I. / THE RELATIONSHIP WITH YOURSELF")}</p><h2 id="new-me-title" class="offer-title">NEW<span>/</span>ME</h2><p class="offer-type">{t("1:1 GUIDANCE & COACHING")}</p></div>
+  <div class="offer-body"><div class="offer-copy"><h3>{t("Self-Leadership starts")}<br />{t("with knowing yourself.")}</h3><p>{t("“Why am I back at the same point?” Sometimes effort alone doesn't change a pattern. Understanding what keeps it in place opens up a different possibility.")}</p><p>{t("In our 1:1 work, we make room for those moments of insight — and explore how to turn them into everyday practice.")}</p><ul class="contrasts"><li>{t("Integrity")} <span>{t("instead of dependency.")}</span></li><li>{t("Self-awareness")} <span>{t("instead of people pleasing.")}</span></li><li>{t("Charisma")} <span>{t("instead of masking.")}</span></li></ul><Button href="#contact">{t("Explore 1:1 work")}</Button></div>
+  <ol class="dimensions">{dimensions.map((dimension, index) => <li><span>{String(index + 1).padStart(2, '0')}</span>{t(dimension)}</li>)}</ol></div>
+</section>

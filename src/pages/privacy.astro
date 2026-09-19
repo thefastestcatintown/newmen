@@ -1,0 +1,9 @@
+---
+import { languageFromPath, translator, localizePath } from '../i18n/utils';
+const lang = languageFromPath(Astro.url.pathname);
+const t = translator(lang);
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+<BaseLayout title="Privacy — Leon Czalaun" noindex><Header /><main id="main" class="legal-page wrap section"><p class="eyebrow">MUFASA / LEON CZALAUN</p><h1>{t("Privacy")}</h1><p>{t("This website is in preparation. The complete privacy notice will be published before launch and before the contact form starts accepting messages. This version includes no analytics or marketing trackers. Contact form delivery is not configured.")}</p><a class="text-link" href={localizePath("/", lang)}>{t("Return to the homepage ↗")}</a></main><Footer /></BaseLayout>

@@ -1,0 +1,16 @@
+---
+import { languageFromPath, translator } from '../i18n/utils';
+const lang = languageFromPath(Astro.url.pathname);
+const t = translator(lang);
+const concepts = [
+  ['01', 'Congruence.', 'Bring your inner and outer worlds closer. Notice what you feel, what matters to you, and how you actually show up.'],
+  ['02', 'Coherence.', 'Make sense of your experience. Begin to recognise the connections between your emotions, your patterns and your choices.'],
+  ['03', 'Confluence.', 'Let understanding become practice. Bring feeling, values and action together in the ordinary moments of your life.'],
+];
+---
+<section id="approach" class="approach section" aria-labelledby="approach-title"><div class="wrap">
+  <div class="section-top"><p class="eyebrow">{t("02 / THE APPROACH")}</p><span class="small-note">{t("Understanding. Then embodiment.")}</span></div>
+  <div class="split-heading"><h2 id="approach-title" class="display-heading">{t("The work")}<span class="accent">.</span></h2><p>{t("The aim isn't to eliminate difficult emotions. It's to experience them fully and still have a choice about what comes next.")}</p></div>
+  <div class="concepts">{concepts.map(([number, title, text]) => <article><span class="eyebrow">{number}</span><h3>{t(title)}</h3><p>{t(text)}</p></article>)}</div>
+  <div class="foundations"><p class="eyebrow">{t("GROUNDED IN")}</p><p>{t("Positive Psychology")} <span> / </span> {t("Mindful Self-Compassion")} <span> / </span> {t("Psychological Flexibility")} <span> / </span> {t("Emotional Intelligence")} <span> / </span> {t("Self-Leadership")}</p></div>
+</div></section>

@@ -1,0 +1,40 @@
+---
+import '../styles/global.css';
+import { languageFromPath, translator, localizePath, sitePath } from '../i18n/utils';
+const lang = languageFromPath(Astro.url.pathname);
+const t = translator(lang);
+interface Props { title?: string; description?: string; noindex?: boolean }
+const {
+  title = "Leon Czalaun — Self-Leadership, Emotional Intelligence & Men's Work",
+  description = "Coaching, men's work and self-leadership with Leon Czalaun. Develop a deeper understanding of your emotions, values and inner world.",
+  noindex = false,
+} = Astro.props;
+// Confirm the production domain before launch.
+const origin = import.meta.env.PUBLIC_SITE_URL || 'https://www.mufasa.live';
+const canonical = new URL(localizePath(Astro.url.pathname, lang), origin).href;
+---
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={t(description)} />
+    <meta name="theme-color" content="#f4f1eb" />
+    {noindex && <meta name="robots" content="noindex, follow" />}
+    <link rel="icon" type="image/svg+xml" href={sitePath('/mark.svg')} />
+    <link rel="canonical" href={canonical} />
+    {(['en', 'de'] as const).map(locale => <link rel="alternate" hreflang={locale} href={new URL(localizePath(Astro.url.pathname, locale), origin).href} />)}
+    <link rel="alternate" hreflang="x-default" href={new URL(localizePath(Astro.url.pathname, 'en'), origin).href} />
+    <meta property="og:locale" content={lang === 'de' ? 'de_DE' : 'en_GB'} />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="MUFASA · Leon Czalaun" />
+    <meta property="og:title" content={t(title)} />
+    <meta property="og:description" content={t(description)} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={new URL(sitePath('/images/leon-czalaun.jpg'), origin).href} />
+    <meta property="og:image:alt" content={t('Leon Czalaun standing in a leafy courtyard')} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <title>{t(title)}</title>
+  </head>
+  <body><a class="skip-link" href="#main">{t('Skip to content')}</a><slot /></body>
+</html>

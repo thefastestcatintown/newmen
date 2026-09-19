@@ -1,0 +1,10 @@
+---
+import { languageFromPath, translator } from '../i18n/utils';
+const lang = languageFromPath(Astro.url.pathname);
+const t = translator(lang);
+import Button from './Button.astro';
+---
+<section id="new-meaning" class="meaning section wrap" aria-labelledby="meaning-title">
+  <div class="offer-heading"><p class="eyebrow">{t("III. / THE RELATIONSHIP WITH YOUR DIRECTION")}</p><h2 id="meaning-title" class="offer-title">NEW<span>/</span>MEANING</h2><p class="offer-type">{t("1:1 · WORKSHOPS · SEMINARS")}</p></div>
+  <div class="meaning-body"><div class="meaning-statement">{t("What matters")}<br /><em>{t("to you?")}</em><span class="long-arrow" aria-hidden="true">↗</span></div><div class="offer-copy"><h3>{t("A direction you can call your own.")}</h3><p>{t("When you can name your values and recognise your strengths, decisions have a clearer point of reference. Meaning becomes something you can practise, not just something you search for.")}</p><p>{t("We explore emotional intelligence, natural authority and self-leadership through the things that matter to you — and the ways you want to live and work.")}</p><ul class="meaning-topics"><li>{t("Character strengths")}</li><li>{t("Personal values")}</li><li>{t("Meaning & purpose")}</li></ul><Button href="#contact">{t("Explore NEW/MEANING")}</Button></div></div>
+</section>

@@ -1,0 +1,15 @@
+---
+import { languageFromPath, translator, localizePath } from '../i18n/utils';
+const lang = languageFromPath(Astro.url.pathname);
+const t = translator(lang);
+import LanguageSwitch from './LanguageSwitch.astro';
+import MobileMenu from './MobileMenu.astro';
+import Button from './Button.astro';
+const links = [ ['Approach', '/#approach'], ['NEW/ME', '/#new-me'], ['NEW/MEN', '/#new-men'], ['NEW/MEANING', '/#new-meaning'], ['About', '/#about'], ['Contact', '/#contact'] ].map(([label, href]) => [t(label), localizePath(href, lang)]);
+---
+<header class="site-header wrap">
+  <a class="wordmark" href={localizePath("/", lang)} aria-label={t("Mufasa home")}>MUFASA<span>LEON CZALAUN</span></a>
+  <nav class="desktop-nav" aria-label={t("Main navigation")}>{links.map(([label, href]) => <a href={href}>{t(label)}</a>)}</nav>
+  <div class="header-cta"><Button href={localizePath("/#contact", lang)}>{t("Let's talk")}</Button></div>
+  <div class="header-tools"><LanguageSwitch /><MobileMenu links={links} /></div>
+</header>

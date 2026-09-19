@@ -1,0 +1,24 @@
+---
+import { languageFromPath, localizePath } from '../i18n/utils';
+const language = languageFromPath(Astro.url.pathname);
+---
+<nav class="language-switch" aria-label={language === 'de' ? 'Sprache wählen' : 'Choose language'}>
+  {(['de', 'en'] as const).map(lang => (
+    <a href={localizePath(Astro.url.pathname, lang)} lang={lang} hreflang={lang}
+      aria-label={lang === 'de' ? 'Deutsch' : 'English'}
+      aria-current={language === lang ? 'page' : undefined}
+      data-language-link>{lang.toUpperCase()}</a>
+  ))}
+</nav>
+<script>
+  // Preserve the current section when navigating to its translated page.
+  const updateLanguageLinks = () => {
+    document.querySelectorAll<HTMLAnchorElement>('[data-language-link]').forEach(link => {
+      const url = new URL(link.href);
+      url.hash = window.location.hash;
+      link.href = url.href;
+    });
+  };
+  updateLanguageLinks();
+  window.addEventListener('hashchange', updateLanguageLinks);
+</script>

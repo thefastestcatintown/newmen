@@ -1,0 +1,5 @@
+---
+interface Props { href: string; quiet?: boolean }
+const { href, quiet = false } = Astro.props;
+---
+<a class:list={['button', { 'button-quiet': quiet }]} href={href}><slot /><span aria-hidden="true">↗</span></a>

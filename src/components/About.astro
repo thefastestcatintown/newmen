@@ -1,0 +1,8 @@
+---
+import { languageFromPath, translator, sitePath } from '../i18n/utils';
+const lang = languageFromPath(Astro.url.pathname);
+const t = translator(lang);
+---<section id="about" class="about section" aria-labelledby="about-title"><div class="wrap about-grid">
+  <figure><img src={sitePath('/images/leon-czalaun.jpg')} alt={t("Leon in a leafy courtyard")} width="1500" height="2193" loading="lazy" /><figcaption>LEON CZALAUN / BERLIN</figcaption></figure>
+  <div class="about-copy"><p class="eyebrow">{t("THE PERSON BEHIND THE PRACTICE")}</p><h2 id="about-title" class="editorial-heading">{t("I'm Leon.")}<br /><em>{t("Also called Mufasa.")}</em></h2><p class="lead">{t("This work belongs in real life.")}</p><p>{t("For me, that means Berlin. Work, relationships, difficult conversations. Learning to pause in the middle of an ordinary day, not waiting for life to become quiet enough.")}</p><p>{t("I know it can feel out of place to take a breath, close your eyes for a moment, or admit you don't have an answer. I'm learning to make room for those moments anyway.")}</p><p>{t("My work draws on positive psychology, self-compassion and my experience in management and leadership. What matters to me is how that understanding becomes something we actually live.")}</p><p class="signature">{t("Less performance. More presence.")}</p><a class="text-link" href="#contact">{t("Let's get to know each other")} <span aria-hidden="true">↗</span></a></div>
+</div></section>
