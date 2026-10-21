@@ -1,0 +1,17 @@
+---
+import { languageFromPath, translator } from '../i18n/utils';
+const lang = languageFromPath(Astro.url.pathname);
+const t = translator(lang);
+const collaborators = ['PATHWORD', 'THE POSSIBLE MAN'];
+---
+<section id="collaborations" class="collaborations section" aria-labelledby="collaborations-title">
+  <div class="wrap collaboration-heading">
+    <p class="eyebrow">{t('SELECTED COLLABORATIONS')}</p>
+    <h2 id="collaborations-title" class="editorial-heading">{t('Work grows')} <em>{t('in connection.')}</em></h2>
+  </div>
+  <div class="collaboration-marquee" aria-label={t('Selected collaborators')}>
+    <div class="collaboration-track">
+      {[...collaborators, ...collaborators].map((name, index) => <span aria-hidden={index >= collaborators.length ? 'true' : undefined}>{name}<i aria-hidden="true">↗</i></span>)}
+    </div>
+  </div>
+</section>

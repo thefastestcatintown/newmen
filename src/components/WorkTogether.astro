@@ -1,0 +1,32 @@
+---
+import { languageFromPath, translator } from '../i18n/utils';
+const lang = languageFromPath(Astro.url.pathname);
+const t = translator(lang);
+
+const ways = [
+  ['01', '1:1 coaching', 'A personal space for emotional clarity, self-leadership and change that reaches everyday life.', 'NEW/ME'],
+  ['02', "Men's groups & retreats", 'Honest connection, shared practice and time away from the roles you usually carry.', 'NEW/MEN'],
+  ['03', 'Workshops & leadership', 'Evidence-informed work on values, strengths and emotional intelligence for groups and teams.', 'NEW/MEANING'],
+];
+---
+<section id="work-together" class="work-together section wrap" aria-labelledby="work-together-title">
+  <div class="work-together-intro">
+    <p class="eyebrow">{t('AT A GLANCE')}</p>
+    <h2 id="work-together-title" class="editorial-heading">{t('Ways to work')}<br /><em>{t('together.')}</em></h2>
+    <p>{t("Coaching and men's work for a more honest relationship with yourself, with others and with the direction of your life.")}</p>
+  </div>
+  <div class="work-cards">
+    {ways.map(([number, title, description, label]) => (
+      <article>
+        <div><span class="eyebrow">{number}</span><span class="work-label">{label}</span></div>
+        <h3>{t(title)}</h3>
+        <p>{t(description)}</p>
+      </article>
+    ))}
+  </div>
+  <div class="credentials" aria-label={t('Professional foundation')}>
+    <span>{t("Master's in Positive Psychology")}</span>
+    <span>{t('Evidence-informed practice')}</span>
+    <span>{t('Management & leadership experience')}</span>
+  </div>
+</section>

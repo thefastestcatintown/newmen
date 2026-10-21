@@ -70,6 +70,17 @@ figcaption { font-size: 9px; letter-spacing: .075em; margin-top: 12px; }
 .editorial-heading { font-family: var(--serif); font-size: clamp(36px, 4.1vw, 58px); line-height: 1.12; letter-spacing: -.035em; }
 .editorial-heading em { color: var(--muted); }
 .intro { display: grid; gap: 30px; }
+.work-together { display: grid; gap: 38px; border-top: 1px solid var(--line); }
+.work-together-intro { display: grid; gap: 22px; }
+.work-together-intro > p:last-child { color: var(--muted); max-width: 47ch; }
+.work-cards { display: grid; border-bottom: 1px solid var(--line); }
+.work-cards article { padding-block: 25px 30px; border-top: 1px solid var(--line); }
+.work-cards article > div { display: flex; justify-content: space-between; gap: 20px; color: var(--accent); }
+.work-label { font-size: 9px; letter-spacing: .12em; }
+.work-cards h3 { font-family: var(--serif); font-size: 30px; letter-spacing: -.03em; margin-block: 22px 12px; }
+.work-cards p { color: var(--muted); font-size: 15px; max-width: 39ch; }
+.credentials { display: flex; flex-wrap: wrap; gap: 8px; }
+.credentials span { border: 1px solid var(--line); padding: 8px 12px; font-size: 10px; letter-spacing: .08em; text-transform: uppercase; }
 .intro-columns { display: grid; gap: 22px; margin-top: 30px; color: var(--muted); }
 .intro-columns p { margin: 0; }
 .approach { background: #e9e7de; }
@@ -105,6 +116,7 @@ figcaption { font-size: 9px; letter-spacing: .075em; margin-top: 12px; }
 .men-intro h3 { font-family: var(--serif); font-size: clamp(40px, 4.8vw, 64px); letter-spacing: -.035em; line-height: 1.1; }
 .men-intro h3 em { color: #c9cbb9; }
 .men-intro p { color: #d0d1c6; max-width: 48ch; }
+.men-intro .positioning-note { color: var(--paper); border-left: 2px solid #c99779; padding-left: 18px; }
 .men-section .button { background: var(--paper); color: var(--ink); margin-top: 30px; }
 .men-section .button:hover { background: #dbc4af; }
 .men-section :focus-visible { outline-color: #e8c7ad; }
@@ -130,6 +142,13 @@ figcaption { font-size: 9px; letter-spacing: .075em; margin-top: 12px; }
 .about-copy .lead { font-size: 21px; }
 .signature { font-family: var(--serif); font-style: italic; font-size: 25px; }
 .about-copy .text-link { margin-top: 15px; }
+.collaborations { overflow: hidden; border-bottom: 1px solid var(--line); }
+.collaboration-heading { display: grid; gap: 24px; margin-bottom: 50px; }
+.collaboration-marquee { border-block: 1px solid var(--line); overflow: hidden; }
+.collaboration-track { width: max-content; display: flex; animation: collaboration-scroll 24s linear infinite; }
+.collaboration-track span { display: flex; align-items: center; gap: 26px; min-width: 310px; padding: 20px 45px; border-right: 1px solid var(--line); font-family: var(--serif); font-size: clamp(25px, 3vw, 40px); white-space: nowrap; }
+.collaboration-track i { color: var(--accent); font-family: var(--sans); font-size: 20px; font-style: normal; }
+@keyframes collaboration-scroll { to { transform: translateX(-50%); } }
 .invitation { text-align: center; border-bottom: 1px solid var(--line); }
 .invitation h2 { font-family: var(--serif); font-size: clamp(90px, 14vw, 180px); letter-spacing: -.065em; line-height: 1; margin-block: 24px; }
 .invitation > p:not(.eyebrow) { color: var(--muted); }
@@ -183,6 +202,8 @@ button:disabled { opacity: .6; cursor: wait; }
   .hero-bottom { grid-column: 1/-1; margin-top: 22px; }
   .hero-bottom > span { font-size: 16px; }
   .intro-columns { grid-template-columns: 1fr 1fr; gap: 40px; }
+  .work-together { grid-template-columns: .8fr 1.2fr; column-gap: 60px; }
+  .work-together .credentials { grid-column: 1/-1; }
   .split-heading { grid-template-columns: 1fr 1fr; align-items: center; gap: 60px; }
   .concepts { grid-template-columns: repeat(3, 1fr); gap: 35px; }
   .concepts article { padding-bottom: 45px; }
@@ -217,6 +238,7 @@ button:disabled { opacity: .6; cursor: wait; }
   .intro > .eyebrow { padding-top: 12px; }
   .intro-columns { margin-top: 40px; gap: 50px; }
   .concepts { gap: 55px; margin-top: 60px; }
+  .work-together { column-gap: 110px; }
   .concepts h3 { font-size: 39px; }
   .foundations { grid-template-columns: 1fr 4fr; align-items: baseline; }
   .offer-heading { position: relative; }
