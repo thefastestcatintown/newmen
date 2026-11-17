@@ -5,7 +5,7 @@ const t = translator(lang);
 import LanguageSwitch from './LanguageSwitch.astro';
 import MobileMenu from './MobileMenu.astro';
 import Button from './Button.astro';
-const links = [ ['Work together', '/#work-together'], ['Approach', '/#approach'], ['NEW/ME', '/#new-me'], ['NEW/MEN', '/#new-men'], ['NEW/MEANING', '/#new-meaning'], ['About', '/#about'], ['Contact', '/#contact'] ].map(([label, href]) => [t(label), localizePath(href, lang)]);
+const links = [ ['Coming home', '/#coming-home'], ['Approach', '/#approach'], ['NEW/ME', '/#new-me'], ['NEW/MEN', '/#new-men'], ['NEW/MEANING', '/#new-meaning'], ['About', '/#about'], ['Contact', '/#contact'] ].map(([label, href]) => [t(label), localizePath(href, lang)]);
 ---
 <header class="site-header wrap">
   <a class="wordmark" href={localizePath("/", lang)} aria-label={t("Mufasa home")}>MUFASA<span>LEON CZALAUN</span></a>

@@ -83,6 +83,31 @@ figcaption { font-size: 9px; letter-spacing: .075em; margin-top: 12px; }
 .credentials span { border: 1px solid var(--line); padding: 8px 12px; font-size: 10px; letter-spacing: .08em; text-transform: uppercase; }
 .intro-columns { display: grid; gap: 22px; margin-top: 30px; color: var(--muted); }
 .intro-columns p { margin: 0; }
+.coming-home { background: #ded2c4; overflow: hidden; }
+.home-opening { display: grid; gap: 30px; }
+.home-title { font-family: var(--serif); font-size: clamp(56px, 8vw, 108px); line-height: .98; letter-spacing: -.055em; }
+.home-title em { color: var(--accent); }
+.home-intro { max-width: 660px; margin-top: 32px; font-size: clamp(20px, 2vw, 27px); line-height: 1.45; }
+.home-words { display: grid; margin-top: 65px; border-bottom: 1px solid #b9afa3; }
+.home-words article { border-top: 1px solid #b9afa3; padding-block: 28px 34px; }
+.home-word-heading { display: flex; align-items: baseline; gap: 22px; margin-bottom: 18px; }
+.home-word-heading span { color: var(--accent); }
+.home-word-heading h3 { font-family: var(--serif); font-size: clamp(38px, 4vw, 57px); letter-spacing: -.04em; }
+.home-words article > p { color: #55554d; max-width: 49ch; }
+.inner-home { display: grid; gap: 26px; padding-block: 55px; }
+.inner-home ul { border-top: 1px solid #b9afa3; }
+.inner-home li { display: flex; gap: 22px; align-items: baseline; padding-block: 8px; border-bottom: 1px solid #b9afa3; font-family: var(--serif); font-size: clamp(24px, 2.5vw, 34px); letter-spacing: -.025em; }
+.inner-home li span { color: var(--accent); font-family: var(--sans); font-size: 9px; letter-spacing: .08em; }
+.inner-home > p:last-child { color: #55554d; max-width: 50ch; }
+.home-feeling { margin: 0; padding: 48px 28px; background: var(--ink); color: var(--paper); }
+.home-feeling p { font-family: var(--serif); font-size: clamp(36px, 5.3vw, 72px); line-height: 1.08; letter-spacing: -.04em; max-width: 1000px; }
+.home-feeling footer { margin-top: 30px; color: #c9cbbf; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; }
+.home-reflections { display: grid; gap: 40px; padding-block: 60px; }
+.home-reflections article { border-top: 1px solid #b9afa3; padding-top: 22px; }
+.home-reflections article > p:last-child { color: #55554d; max-width: 52ch; }
+.home-reflections .eyebrow { color: var(--accent); margin-bottom: 20px; }
+.home-permission { display: grid; gap: 22px; border: 1px solid #b9afa3; padding: 28px; }
+.home-permission > p:last-child { max-width: 70ch; font-family: var(--serif); font-size: clamp(22px, 2.5vw, 32px); line-height: 1.35; }
 .approach { background: #e9e7de; }
 .section-top { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
 .small-note { display: none; font-family: var(--serif); font-style: italic; font-size: 16px; }
@@ -202,6 +227,14 @@ button:disabled { opacity: .6; cursor: wait; }
   .hero-bottom { grid-column: 1/-1; margin-top: 22px; }
   .hero-bottom > span { font-size: 16px; }
   .intro-columns { grid-template-columns: 1fr 1fr; gap: 40px; }
+  .home-words { grid-template-columns: 1fr 1fr; }
+  .home-words article { padding-inline: 34px; }
+  .home-words article:first-child { padding-left: 0; }
+  .home-words article + article { border-left: 1px solid #b9afa3; }
+  .inner-home { grid-template-columns: .55fr 1fr 1fr; gap: 40px; align-items: start; }
+  .home-feeling { padding: 70px 60px; }
+  .home-reflections { grid-template-columns: 1fr 1fr; gap: 60px; }
+  .home-permission { grid-template-columns: .45fr 1.55fr; gap: 45px; padding: 40px; align-items: start; }
   .work-together { grid-template-columns: .8fr 1.2fr; column-gap: 60px; }
   .work-together .credentials { grid-column: 1/-1; }
   .split-heading { grid-template-columns: 1fr 1fr; align-items: center; gap: 60px; }
@@ -237,6 +270,12 @@ button:disabled { opacity: .6; cursor: wait; }
   .intro { grid-template-columns: 1fr 3fr; gap: 55px; }
   .intro > .eyebrow { padding-top: 12px; }
   .intro-columns { margin-top: 40px; gap: 50px; }
+  .home-opening { grid-template-columns: 1fr 3fr; gap: 55px; }
+  .home-opening > .eyebrow { padding-top: 16px; }
+  .home-words { margin-top: 90px; }
+  .inner-home { gap: 70px; padding-block: 80px; }
+  .home-feeling { padding: 90px 80px; }
+  .home-reflections { gap: 110px; padding-block: 85px; }
   .concepts { gap: 55px; margin-top: 60px; }
   .work-together { column-gap: 110px; }
   .concepts h3 { font-size: 39px; }
