@@ -1,0 +1,62 @@
+---
+import { languageFromPath, translator } from '../i18n/utils';
+const lang = languageFromPath(Astro.url.pathname);
+const t = translator(lang);
+
+const innerHome = [
+  'Self-Acceptance',
+  'Self-Love',
+  'Self-Respect',
+  'Self-Discipline',
+  'Self-Awareness',
+];
+---
+<section id="coming-home" class="coming-home section" aria-labelledby="coming-home-title">
+  <div class="wrap">
+    <div class="home-opening">
+      <p class="eyebrow">{t('THE THEME UNDERNEATH IT ALL')}</p>
+      <div>
+        <h2 id="coming-home-title" class="home-title">{t('Coming home.')}<br /><em>{t('To yourself.')}</em></h2>
+        <p class="home-intro">{t('Coming home is one of the biggest themes in all of my work. I help people build a Zuhause so they can rediscover their Heimat.')}</p>
+      </div>
+    </div>
+
+    <div class="home-words" aria-label={t('Two ways of understanding home')}>
+      <article>
+        <div class="home-word-heading"><span class="eyebrow">01</span><h3>Zuhause</h3></div>
+        <p>{t('A safe space you can build within yourself. A relationship with yourself that can hold you, wherever you are.')}</p>
+      </article>
+      <article>
+        <div class="home-word-heading"><span class="eyebrow">02</span><h3>Heimat</h3></div>
+        <p>{t('Your origin. Your roots. The place beneath the roles where you can ask: Where do I come from? Who am I? What am I naturally?')}</p>
+      </article>
+    </div>
+
+    <div class="inner-home">
+      <p class="eyebrow">{t('A ZUHAUSE WITHIN')}</p>
+      <ul>{innerHome.map((quality, index) => <li><span>{String(index + 1).padStart(2, '0')}</span>{t(quality)}</li>)}</ul>
+      <p>{t('Through these practices, we can slowly begin to fall into our Heimat. A place can be an entry point, but coming home is something we experience — not something we can understand with the head alone.')}</p>
+    </div>
+
+    <blockquote class="home-feeling">
+      <p>{t('It feels like relief. Like parts that have been in exile are finally allowed to return.')}</p>
+      <footer>{t('Serenity and peace. Sadness and grief. Gratitude, happiness and joy.')}</footer>
+    </blockquote>
+
+    <div class="home-reflections">
+      <article>
+        <p class="eyebrow">{t('MY OWN WAY HOME')}</p>
+        <p>{t("For a long time, I didn't feel Heimat anywhere. I'm only now learning that it is also within myself — that I can come home there. It means reconnecting with myself, with the parts of my past I couldn't yet accept, and with my presence.")}</p>
+      </article>
+      <article>
+        <p class="eyebrow">{t('MY WHY')}</p>
+        <p>{t('I want to create experiences that make life a little better: moments of being yourself, feeling yourself and staying in connection with what is here. To feel clearer, calmer and more confident. To be present — and loving and grateful towards yourself.')}</p>
+      </article>
+    </div>
+
+    <div class="home-permission">
+      <p class="eyebrow">{t('NO PRESSURE')}</p>
+      <p>{t("Support is there when you want it — with me or with someone else. You can look, feel for yourself, and trust your instincts. There's no pressure and no obligation of any kind.")}</p>
+    </div>
+  </div>
+</section>
